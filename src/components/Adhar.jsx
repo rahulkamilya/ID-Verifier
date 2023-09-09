@@ -89,7 +89,7 @@ const Adhar = () => {
     <div>
       <div className="mt-20 flex flex-col justify-center items-center">
         <p className="text-3xl font-extrabold text-yellow-500">
-          Verify your Adhaar
+          Verify your Aadhaar ID
         </p>
         <div className="flex flex-col md:flex-row space-x-3 w-6/12">
           <input
