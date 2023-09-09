@@ -12,7 +12,7 @@ const Adhar = () => {
   };
 
   const fetchData = async (input) => {
-    if (input.trim() === "" || input.length < 12) {
+    if (input.trim() === "" || input.length < 12 || input.length>12) {
       toast.error("Please recheck your Aadhaar number 😢", {
         position: "bottom-left",
         autoClose: 5000,
@@ -95,6 +95,7 @@ const Adhar = () => {
           <input
             onChange={changeHandler}
             value={input}
+            maxLength={12}
             className="bg-[#202123] rounded-3xl text-white px-4 py-4 w-12/12 md:w-11/12 my-8"
             type="text"
             placeholder="Enter Your Adhaar number"
