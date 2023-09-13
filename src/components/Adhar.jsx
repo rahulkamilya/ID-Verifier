@@ -92,7 +92,7 @@ const Adhar = () => {
       <div className="mt-20 flex flex-col justify-center items-center">
         <img className="mb-3" src="https://imgs.search.brave.com/yZ6dcrM3ZwgoMtXnljj-rfpCFf3V01-5h8zO4xykrno/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91aWRh/aS5nb3YuaW4vaW1h/Z2VzL2xhbmdQYWdl/L1BhZ2UtMS5zdmc.svg" alt="" />
         <p className="text-3xl font-extrabold text-yellow-500">
-          Verify your Adhaar
+          Verify your Aadhaar
         </p>
         <form onSubmit={submitHandler} className="flex flex-col md:flex-row space-x-3 w-8/12 md:w-6/12">
           <input
