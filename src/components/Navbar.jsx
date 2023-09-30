@@ -23,12 +23,12 @@ const Navbar = () => {
             </svg>
             <span className="ml-3 text-xl">VeriIDy</span>
           </a>
-          <nav className="hidden md:block md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav className="hidden md:block md:ml-auto flex cursor-pointer flex-wrap items-center text-base justify-center">
             <a className="mr-5 hover:text-white">Home</a>
             <a className="mr-5 hover:text-white">Team</a>
             <a className="mr-5 hover:text-white">About</a>
           </nav>
-          <button className="hidden md:block bg-[#245FFF] my-1 text-white font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white">
+          <button className="hidden md:block bg-[#245FFF] my-1 text-white cursor-pointer font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white">
             Button
           </button>
           <div className="block md:hidden">
@@ -37,13 +37,13 @@ const Navbar = () => {
         </div>
       </header>
       {isOpen && (
-        <div className="md:hidden block flex flex-col bg-gray-900 text-white px-4 py-2">
+        <div className="md:hidden block flex flex-col cursor-pointer bg-gray-900 text-white px-4 py-2">
           <nav className=" flex flex-col items-center text-base">
             <a className="text-xl py-1 font-semibold">Home</a>
             <a className="text-xl py-1 font-semibold">Team</a>
             <a className="text-xl py-1 font-semibold">About</a>
           </nav>
-          <button className="bg-[#245FFF] my-1 text-white w-full font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white">
+          <button className="bg-[#245FFF] my-1 text-white w-full cursor-pointer font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white">
             Login
           </button>
         </div>
