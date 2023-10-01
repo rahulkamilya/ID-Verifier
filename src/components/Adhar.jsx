@@ -4,12 +4,28 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Adhar = () => {
-  const [input, setInput] = useState("");
-  const [result, setResult] = useState("");
 
-  const changeHandler = (e) => {
-    setInput(e.target.value);
+  const [formattedInput, setFormattedInput] = useState('');
+  const [input, setinput] = useState('');
+
+  const handleDisplayInputChange = (event) => {
+    const inputValue = event.target.value;
+    // Remove any non-numeric characters
+    const cleanValue = inputValue.replace(/\D/g, '');
+
+    let formattedValue = '';
+    for (let i = 0; i < cleanValue.length; i++) {
+      formattedValue += cleanValue[i];
+      if ((i + 1) % 4 === 0 && i + 1 !== cleanValue.length) {
+        formattedValue += ' ';
+      }
+    }
+
+    setFormattedInput(formattedValue);
+    setinput(cleanValue);
   };
+
+  const [result, setResult] = useState("");
 
   const fetchData = async (input) => {
     if (input.trim() === "" || input.length < 12 || input.length>12) {
@@ -98,12 +114,20 @@ const Adhar = () => {
         </p>
         <form onSubmit={submitHandler} className="flex flex-col md:flex-row space-x-3 w-8/12 md:w-6/12">
           <input
-            onChange={changeHandler}
+            onChange={(e) => setinput(e.target.value)}
             value={input}
-            className="bg-[#202123] rounded-3xl text-white px-4 py-4 w-12/12 md:w-11/12 my-8"
+            className="hidden"
             type="number"
             placeholder="XXXX-XXXX-XXXX"
-            maxlength={12}
+            maxLength={14}
+          />
+          <input
+            onChange={handleDisplayInputChange}
+            value={formattedInput}
+            className="bg-[#202123] rounded-3xl text-white px-4 py-4 w-12/12 md:w-11/12 my-8"
+            type="text"
+            placeholder="XXXX-XXXX-XXXX"
+            maxLength={14}
           />
           <button onClick={submitHandler} className="self-center w-20">
             <span className={`material-symbols-rounded bg-yellow-500 px-5 py-4 rounded-3xl text-whitefont-xl font-bold ${!input && 'opacity-50 cursor-auto'}`}>
