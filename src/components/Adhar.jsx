@@ -10,6 +10,7 @@ const Adhar = () => {
   const changeHandler = (e) => {
     if(e.target.value.length===13){ 
       window.alert("Adhar Number shouldn't exceed 12 digits")
+      e.target.value = e.target.value.slice(0, 12)
     }
     setInput(e.target.value);
   };
@@ -106,7 +107,7 @@ const Adhar = () => {
             className="bg-[#202123] rounded-3xl text-white px-4 py-4 w-12/12 md:w-11/12 my-8"
             type="number"
             placeholder="XXXX-XXXX-XXXX"
-            maxlength={12}
+            maxLength={12}
           />
           <button onClick={submitHandler} className="self-center w-20">
             <span className={`material-symbols-rounded bg-yellow-500 px-5 py-4 rounded-3xl text-whitefont-xl font-bold ${!input && 'opacity-50 cursor-auto'}`}>
