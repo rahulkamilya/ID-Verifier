@@ -12,8 +12,7 @@ const Adhar = () => {
   };
 
   const fetchData = async (input) => {
-    input = input.trim();
-    if (input === "" || !(/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(input))) {
+    if (input.trim() === "" || input.length < 12 || input.length>12) {
       toast.error("Please recheck your Aadhaar number 😢", {
         position: "bottom-left",
         autoClose: 5000,
@@ -84,6 +83,8 @@ const Adhar = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (!input)
+      return
     fetchData(input);
     setInput("");
   };
@@ -101,13 +102,12 @@ const Adhar = () => {
             value={input}
             className="bg-[#202123] rounded-3xl text-white px-4 py-4 w-12/12 md:w-11/12 my-8"
             type="text"
-            placeholder="Enter Your Adhaar number"
+            placeholder="Enter Your Aadhaar Number"
             maxlength={12}
-
           />
           <button onClick={submitHandler} className="self-center w-20">
-            <span className="material-symbols-rounded bg-yellow-500 px-5 py-4 rounded-xl text-whitefont-xl font-bold">
-              search
+            <span className={`material-symbols-rounded bg-yellow-500 px-5 py-4 rounded-3xl text-whitefont-xl font-bold ${!input && 'opacity-50 cursor-auto'}`}>
+              Search
             </span>
           </button>
         </form>
