@@ -101,8 +101,8 @@ const Adhar = () => {
             onChange={changeHandler}
             value={input}
             className="bg-[#202123] rounded-3xl text-white px-4 py-4 w-12/12 md:w-11/12 my-8"
-            type="text"
-            placeholder="Enter Your Aadhaar Number"
+            type="number"
+            placeholder="XXXX-XXXX-XXXX"
             maxlength={12}
           />
           <button onClick={submitHandler} className="self-center w-20">
