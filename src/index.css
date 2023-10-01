@@ -1,11 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
+}
+
+.fontDosis {
+  font-family: 'Dosis', sans-serif, 
+               'Helvetica Neue', sans-serif,
+               'Arial', sans-serif;
+}
+
+.strikeThru{
+  content: "";
+  border-bottom: 3px solid #ffbb39;
+  @apply absolute w-full top-[43%] left-0
+}

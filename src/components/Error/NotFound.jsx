@@ -1,18 +1,39 @@
-import notFoundSrc from  '../../assets/notFound.jpg'
+// NotFound2.jsx
+import React from 'react';
+import astronaut from '../../assets/astronaut.svg';
+import saturn from '../../assets/saturn.svg';
+import {useNavigate} from 'react-router-dom'
 
-export default function NotFound() {
-  return (
-    <div className="bg-gray-700 h-screen flex justify-center items-center text-white font-bold text-4xl m-auto flex-col">
-      <span className="font-bold tracking-wide text-3xl">404 Page Not Found</span>
+const NotFound2 = () => {
 
-      <img
-        src={notFoundSrc}
-        alt="404 : page not found"
-        className=' w-80 my-5 rounded-xl' 
-      />
+    const navigate = useNavigate()
 
-      <p className="text-[10px]"><a href="https://www.freepik.com/free-vector/page-found-concept-illustration_7887410.htm#query=404%20page%20found&position=2&from_view=keyword&track=ais">Image by storyset</a> on Freepik</p>
-      
-    </div>
-  )
-}
+    const handleRedirection = () => {
+        navigate('/')
+    }
+    return (
+        <div className="bg-[#24344c] w-screen h-screen relative overflow-hidden fontDosis">
+            <div id="particles-js" className=" bg-[#24344c] fixed w-full h-full opacity-20"></div>
+            <div className="denied__wrapper absolute bg-[#24344c] denied__wrapper h-[390px] left-1/2 max-w-[390px] mx-auto top-[30%] translate-x-[-50%] translate-y-[-50%] w-full">
+                <div className='relative'>
+                    <h1 className="text-center text-white font-Dosis text-[100px] mb-0 font-extrabold">404</h1>
+                    <h3 className="text-center text-white text-base md:text-xl leading-6 max-w-[330px] mx-auto mb-8 font-Dosis font-normal">
+                        LOST IN 
+                        <span className="relative inline-block">
+                        &nbsp; SPACE
+                            <span className="strikeThru"></span>
+                        </span>
+
+                        &nbsp; AADHAR-ID Verifier? Hmm, looks like that page doesn&apos;t exist.
+                    </h3>
+                    <img id="astronaut" src={astronaut} alt="Astronaut" className="w-[43px] absolute right-20 top-210 animate-spin animation-linear duration-100" />
+                    <img id="planet" src={saturn} alt="Planet" className="absolute w-[390px]" />
+                </div>
+            </div>
+
+            <button className='bg-transparent text-white py-2 px-0 border border-white rounded-md w-[150px] text-15 text-center mx-auto align-middle block mb-4 mt-25 fontDosis font-normal bottom-0 absolute left-1/2 translate-x-[-50%] translate-y-[-50%]' onClick={handleRedirection} >Go Home</button>
+        </div>
+    );
+};
+
+export default NotFound2;

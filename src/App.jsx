@@ -1,14 +1,12 @@
 
 import "./index.css";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Routes from "./routes/Routes";
 
 function App() {
 
   return (
     <div className="bg-gray-900 h-screen">
-      <Navbar />
-      <hr />
       <Routes />
     </div>
   );
