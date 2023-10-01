@@ -12,7 +12,8 @@ const Adhar = () => {
   };
 
   const fetchData = async (input) => {
-    if (input.trim() === "" || input.length < 12 || input.length>12) {
+    input = input.trim();
+    if (input === "" || !(/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/.test(input))) {
       toast.error("Please recheck your Aadhaar number 😢", {
         position: "bottom-left",
         autoClose: 5000,
