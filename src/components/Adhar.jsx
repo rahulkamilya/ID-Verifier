@@ -12,7 +12,7 @@ const Adhar = () => {
   };
 
   const fetchData = async (input) => {
-    if (input.trim() === "" || input.length < 12 || input.length>12) {
+    if (input.trim() === "" || input.length < 12 || input.length > 12) {
       toast.error("Please recheck your Aadhaar number 😢", {
         position: "bottom-left",
         autoClose: 5000,
@@ -83,8 +83,7 @@ const Adhar = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (!input)
-      return
+    if (!input) return;
     fetchData(input);
     setInput("");
   };
@@ -92,11 +91,18 @@ const Adhar = () => {
   return (
     <div>
       <div className="mt-20 flex flex-col justify-center items-center">
-        <img className="mb-3" src="https://imgs.search.brave.com/yZ6dcrM3ZwgoMtXnljj-rfpCFf3V01-5h8zO4xykrno/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91aWRh/aS5nb3YuaW4vaW1h/Z2VzL2xhbmdQYWdl/L1BhZ2UtMS5zdmc.svg" alt="" />
+        <img
+          className="mb-3"
+          src="https://imgs.search.brave.com/yZ6dcrM3ZwgoMtXnljj-rfpCFf3V01-5h8zO4xykrno/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91aWRh/aS5nb3YuaW4vaW1h/Z2VzL2xhbmdQYWdl/L1BhZ2UtMS5zdmc.svg"
+          alt=""
+        />
         <p className="text-3xl font-extrabold text-yellow-500">
           Verify Your Aadhaar ID
         </p>
-        <form onSubmit={submitHandler} className="flex flex-col md:flex-row space-x-3 w-8/12 md:w-6/12">
+        <form
+          onSubmit={submitHandler}
+          className="flex flex-col md:flex-row space-x-3 w-8/12 md:w-6/12"
+        >
           <input
             onChange={changeHandler}
             value={input}
@@ -106,7 +112,11 @@ const Adhar = () => {
             maxlength={12}
           />
           <button onClick={submitHandler} className="self-center w-20">
-            <span className={`material-symbols-rounded bg-yellow-500 px-5 py-4 rounded-3xl text-whitefont-xl font-bold ${!input && 'opacity-50 cursor-auto'}`}>
+            <span
+              className={`material-symbols-rounded bg-yellow-500 px-5 py-4 rounded-3xl text-whitefont-xl font-bold ${
+                !input && "opacity-50 cursor-auto"
+              }`}
+            >
               Search
             </span>
           </button>
@@ -117,4 +127,4 @@ const Adhar = () => {
   );
 };
 
-export default Adhar;
+export default Adhar;
