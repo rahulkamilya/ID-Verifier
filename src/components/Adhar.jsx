@@ -8,6 +8,9 @@ const Adhar = () => {
   const [result, setResult] = useState("");
 
   const changeHandler = (e) => {
+    if(e.target.value.length===12){ 
+      window.alert("Adhar Number shouldn't exceed 12 digits")
+    }
     setInput(e.target.value);
   };
 
