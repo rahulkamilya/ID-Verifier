@@ -86,6 +86,9 @@ const Adhar = () => {
       });
       setResult("Invalid Aadhaar Number");
     }
+    setTimeout(function() {
+      window.location.reload(); 
+  }, 5300);
   };
 
   const submitHandler = (e) => {
