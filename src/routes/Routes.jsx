@@ -9,10 +9,12 @@ function Routes() {
       <RouteWrapper>
           <Route path="/"  element={<>
             <Navbar />
-            <hr />
-            <Adhar/>
-            <Team />
+            <Adhar />
           </>}/>
+          <Route path="/team" element={<>
+            <Navbar />
+            <Team /></>}  />
+          
           <Route path="*"  element={<NotFound/>}/>
       </RouteWrapper>
     )
