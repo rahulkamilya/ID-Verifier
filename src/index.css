@@ -22,3 +22,7 @@
   border-bottom: 3px solid #ffbb39;
   @apply absolute w-full top-[43%] left-0
 }
+body {
+  background-color: #1a202c;
+  height: 100vh; 
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -16,8 +17,8 @@ const Navbar = () => {
             <h1 className="text-3xl font-extrabold text-yellow-500">&nbsp;VeriDy</h1>
           </a>
           <nav className="hidden md:block md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-white cursor-pointer">Home</a>
-            <a className="mr-5 hover:text-white cursor-pointer">Team</a>
+            <Link to="/"><a className="mr-5 hover:text-white cursor-pointer">Home</a></Link>
+            <Link to="/team" ><a className="mr-5 hover:text-white cursor-pointer">Team</a></Link>
             <a className="mr-5 hover:text-white cursor-pointer">About</a>
           </nav>
           <button
