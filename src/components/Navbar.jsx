@@ -12,7 +12,8 @@ const Navbar = () => {
             className="flex title-font font-medium items-center text-white mb-4 md:mb-0 cursor-pointer"
           // Added cursor-pointer class here
           >
-            <img src="/logo.png" alt="" className="w-auto h-14" />
+            <img src="/logo_medium.png" alt="" className="w-auto h-14" />
+            <h1 className="text-3xl font-extrabold text-yellow-500">&nbsp;VeriDy</h1>
           </a>
           <nav className="hidden md:block md:ml-auto flex flex-wrap items-center text-base justify-center">
             <a className="mr-5 hover:text-white cursor-pointer">Home</a>
