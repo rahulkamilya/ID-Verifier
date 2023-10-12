@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-
+  const {pathname} = useLocation();
+  console.log(pathname)
   return (
     <>
       <header className="text-gray-400 bg-gray-900 body-font">
@@ -17,16 +18,16 @@ const Navbar = () => {
             <h1 className="text-3xl font-extrabold text-yellow-500">&nbsp;VeriDy</h1>
           </a>
           <nav className="hidden md:block md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <Link to="/"><a className="mr-5 hover:text-white cursor-pointer">Home</a></Link>
-            <Link to="/team" ><a className="mr-5 hover:text-white cursor-pointer">Team</a></Link>
-            <a className="mr-5 hover:text-white cursor-pointer">About</a>
+            <Link to="/"><a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/"?"text-white":""}`}>Home</a></Link>
+            <Link to="/team" ><a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/team"?"text-white":""}`}>Team</a></Link>
+            <a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/about"?"text-white":""}`}>About</a>
           </nav>
-          <button
+          {/* <button
             className="hidden md:block bg-[#245FFF] my-1 text-white font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white cursor-pointer"
           // Added cursor-pointer class here
           >
             Button
-          </button>
+          </button> */}
           <div className="block md:hidden">
             <Hamburger toggled={isOpen} toggle={setOpen} />
           </div>
@@ -39,12 +40,12 @@ const Navbar = () => {
             <a className="text-xl py-1 font-semibold cursor-pointer">Team</a>
             <a className="text-xl py-1 font-semibold cursor-pointer">About</a>
           </nav>
-          <button
+          {/* <button
             className="bg-[#245FFF] my-1 text-white w-full font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white cursor-pointer"
           // Added cursor-pointer class here
           >
             Login
-          </button>
+          </button> */}
         </div>
       )}
     </>
