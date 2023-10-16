@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const {pathname} = useLocation();
-  console.log(pathname)
   return (
     <>
       <header className="text-gray-400 bg-gray-900 body-font">
@@ -21,6 +20,7 @@ const Navbar = () => {
             <Link to="/"><a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/"?"text-white":""}`}>Home</a></Link>
             <Link to="/team" ><a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/team"?"text-white":""}`}>Team</a></Link>
             <a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/about"?"text-white":""}`}>About</a>
+            <a href="https://github.com/rahulkamilya/ID-Verifier" target="_blank">Github</a>
           </nav>
           {/* <button
             className="hidden md:block bg-[#245FFF] my-1 text-white font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white cursor-pointer"
@@ -36,9 +36,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden block flex flex-col bg-gray-900 text-white px-4 py-2">
           <nav className=" flex flex-col items-center text-base">
-            <a className="text-xl py-1 font-semibold cursor-pointer">Home</a>
-            <a className="text-xl py-1 font-semibold cursor-pointer">Team</a>
-            <a className="text-xl py-1 font-semibold cursor-pointer">About</a>
+            <Link to="/"><a className={`text-xl py-1 font-semibold cursor-pointer${pathname === "/"?"text-white":""}`}>Home</a></Link>
+            <Link to="/team" ><a className={`text-xl py-1 font-semibold cursor-pointer${pathname === "/team"?"text-white":""}`}>Team</a></Link>
+            <a className={`text-xl py-1 font-semibold cursor-pointer${pathname === "/about"?"text-white":""}`}>About</a>
+            <a href="https://github.com/rahulkamilya/ID-Verifier" target="_blank" className="text-xl py-1 font-semibold cursor-pointer">Github</a>
           </nav>
           {/* <button
             className="bg-[#245FFF] my-1 text-white w-full font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white cursor-pointer"
