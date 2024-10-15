@@ -1,8 +1,8 @@
-# Hacktoberfest 2023 Contributing Guidelines
+# Hacktoberfest 2024 Contributing Guidelines
 
 ![](https://hacktoberfest.com/_next/static/media/logo-hacktoberfest--horizontal.ebc5fdc8.svg)
 
-Welcome to Hacktoberfest 2023! We're excited that you want to contribute to our project "Aadhaar ID Verifier". Before you get started, please take a moment to read through our contributing guidelines to ensure a smooth and productive collaboration.
+Welcome to Hacktoberfest 2024! We're excited that you want to contribute to our project "Aadhaar ID Verifier". Before you get started, please take a moment to read through our contributing guidelines to ensure a smooth and productive collaboration.
 
 ## Getting Started
 
