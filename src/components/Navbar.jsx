@@ -13,14 +13,15 @@ const Navbar = () => {
             className="flex title-font font-medium items-center text-white mb-4 md:mb-0 cursor-pointer"
           // Added cursor-pointer class here
           >
-            <img src="/logo_medium.png" alt="" className="w-auto h-14" />
-            <h1 className="text-3xl font-extrabold text-yellow-500">&nbsp;VeriDy</h1>
+            <Link to="/"><img src="/logo_medium.png" alt="" className="w-auto h-14" /></Link>
+            <Link to="/"><h1 className="text-3xl font-extrabold text-yellow-500">&nbsp;VeriDy</h1></Link>
+            
           </a>
-          <nav className="hidden md:block md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav className="hidden md:block md:ml-auto flex-wrap items-center text-base justify-center">
             <Link to="/"><a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/"?"text-white":""}`}>Home</a></Link>
             <Link to="/team" ><a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/team"?"text-white":""}`}>Team</a></Link>
             <a className={`mr-5 hover:text-white cursor-pointer ${pathname === "/about"?"text-white":""}`}>About</a>
-            <a href="https://github.com/rahulkamilya/ID-Verifier" target="_blank">Github</a>
+            <a href="https://github.com/rahulkamilya/ID-Verifier" target="_blank" className=" hover:text-white cursor-pointer ">Github</a>
           </nav>
           {/* <button
             className="hidden md:block bg-[#245FFF] my-1 text-white font-semibold px-4 py-2 rounded-3xl hover:bg-[#0736B3] hover:text-white cursor-pointer"
@@ -34,7 +35,7 @@ const Navbar = () => {
         </div>
       </header>
       {isOpen && (
-        <div className="md:hidden block flex flex-col bg-gray-900 text-white px-4 py-2">
+        <div className="md:hidden flex flex-col bg-gray-900 text-white px-4 py-2">
           <nav className=" flex flex-col items-center text-base">
             <Link to="/"><a className={`text-xl py-1 font-semibold cursor-pointer${pathname === "/"?"text-white":""}`}>Home</a></Link>
             <Link to="/team" ><a className={`text-xl py-1 font-semibold cursor-pointer${pathname === "/team"?"text-white":""}`}>Team</a></Link>
